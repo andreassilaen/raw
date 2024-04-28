@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw
+    database: sage-outrider-418915
+    tables:
+      - name: nyc_taxi_trip
+        columns:
+          - name: lpep_pickup_datetime
+            tests:
+              - not_null
+          - name: lpep_dropoff_datetime
+            tests:
+              - test_is_column_null
+          - name: total_amount
+            tests:
+              - test_is_column_null
